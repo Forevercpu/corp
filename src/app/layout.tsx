@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
-import { ABeeZee, Dancing_Script } from "next/font/google"
+import { ABeeZee, Dancing_Script, Inter } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/header"
+import { AntdRegistry } from "@ant-design/nextjs-registry"
 
-const inter = Dancing_Script({
+const inter = Inter({
   subsets: ["latin"],
-  weight: "400"
+  weight: "400",
 })
 
 export const metadata: Metadata = {
@@ -21,8 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
+        {/* <Header /> */}
+        <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
   )
