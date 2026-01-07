@@ -1,28 +1,14 @@
-'use client'
-import { List, Avatar } from "antd"
 import React, { type FC } from "react"
-import { data } from "@/data"
-import Link from "next/link"
+import { Metadata } from "next"
+import BlogList from "@/components/blogList"
+
+// either Static metadata
+export const metadata: Metadata = {
+  title: "博客列表",
+}
+
 const page: FC = () => {
-  return (
-    <List
-      itemLayout="horizontal"
-      dataSource={data}
-      renderItem={(item, index) => (
-        <List.Item>
-          <List.Item.Meta
-            avatar={
-              <Avatar
-                src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`}
-              />
-            }
-            title={<Link href={`/blog/${item.id}`}>{item.name}</Link>}
-            description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-          />
-        </List.Item>
-      )}
-    />
-  )
+  return <BlogList />
 }
 
 export default page
