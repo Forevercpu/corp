@@ -17,16 +17,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal
-}: Readonly<{
-  children: React.ReactNode,
+  modal,
+  analytics,
+  team,
+}: {
+  children: React.ReactNode
   modal: React.ReactNode
-}>) {
+  analytics: React.ReactNode
+  team: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <AntdRegistry>{children}
+      <body>
+        <AntdRegistry>
+          {children}
           {modal}
+          {/* {analytics}
+          {team} */}
         </AntdRegistry>
       </body>
     </html>
