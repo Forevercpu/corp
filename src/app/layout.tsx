@@ -1,14 +1,6 @@
 import type { Metadata } from "next"
-import { ABeeZee, Dancing_Script, Inter } from "next/font/google"
 import "./globals.css"
-import Header from "@/components/header"
 import { AntdRegistry } from "@ant-design/nextjs-registry"
-import Link from "next/link"
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: "400",
-})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,24 +9,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal,
-  analytics,
-  team,
 }: {
   children: React.ReactNode
-  modal: React.ReactNode
-  analytics: React.ReactNode
-  team: React.ReactNode
 }) {
   return (
     <html lang="en">
       <body>
-        <AntdRegistry>
-          {children}
-          {modal}
-          {/* {analytics}
-          {team} */}
-        </AntdRegistry>
+        <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
   )
